@@ -5,8 +5,7 @@
     <classes>
       <class name="TestNgPractice">
         <methods>
-          <include name="TestCase"/>
-          <include name="setup2"/>
+          <include name="Search"/>
           <include name="setup"/>
         </methods>
       </class> <!-- TestNgPractice -->

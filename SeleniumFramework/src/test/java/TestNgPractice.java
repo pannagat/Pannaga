@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,7 +22,7 @@ System.setProperty("webdriver.chrome.driver","D:\\ChromeDriver3\\chromedriver.ex
 	driver=new ChromeDriver(coptions);
 	}
 
-	@Test(priority=1,description="To check the login functionality of amazon.in" )
+	@Test(priority=1,description="To check the login functionality of amazon.in")
 	public void TestCase() throws InterruptedException
 	{
 		driver.get("https://www.amazon.in/");
@@ -38,7 +39,7 @@ System.setProperty("webdriver.chrome.driver","D:\\ChromeDriver3\\chromedriver.ex
 	
 
 	
-	@Test(priority=2,description="To check the search functionality of amazon.in")
+	@Test(priority=2,description="To check the search functionality of Google")
 	public void Search() throws InterruptedException
 	{
 		ChromeOptions coptions = new ChromeOptions();
@@ -49,19 +50,11 @@ System.setProperty("webdriver.chrome.driver","D:\\ChromeDriver3\\chromedriver.ex
 		driver.get("https://www.google.com/");
 		driver.manage().window().maximize();
 		driver.findElement(By.name("q")).sendKeys("Automation By Selenium");
+		driver.findElement(By.name("btnK")).sendKeys(Keys.RETURN);
 		
 		Thread.sleep(5000);
 	}
-	/*@	BeforeTest
-	public void setup2()
-	{
-		
-		ChromeOptions coptions = new ChromeOptions();
-		coptions.addArguments("--disable-notifications");
-	
-		System.setProperty("webdriver.gecko.driver","D:\\geckodriver-v0.24.0-win32\\geckodriver.exe");
-		
-	driver = new FirefoxDriver();*/
+
 	
 	/*@AfterTest
 	public void finishtest()
