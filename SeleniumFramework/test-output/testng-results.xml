@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="52453" started-at="2020-05-22T17:09:03 IST" finished-at="2020-05-22T17:09:56 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="52453" started-at="2020-05-22T17:09:03 IST" finished-at="2020-05-22T17:09:56 IST">
+      <class name="TestNgPractice">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestNgPractice@2d6eabae]" name="setup" is-config="true" duration-ms="10266" started-at="2020-05-22T17:09:03 IST" finished-at="2020-05-22T17:09:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TestCase()[pri:1, instance:TestNgPractice@2d6eabae]" name="TestCase" duration-ms="24030" started-at="2020-05-22T17:09:13 IST" finished-at="2020-05-22T17:09:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase -->
+        <test-method status="PASS" signature="Search()[pri:2, instance:TestNgPractice@2d6eabae]" name="Search" duration-ms="15972" started-at="2020-05-22T17:09:37 IST" finished-at="2020-05-22T17:09:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Search -->
+        <test-method status="PASS" signature="finishtest()[pri:0, instance:TestNgPractice@2d6eabae]" name="finishtest" is-config="true" duration-ms="2135" started-at="2020-05-22T17:09:53 IST" finished-at="2020-05-22T17:09:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finishtest -->
+      </class> <!-- TestNgPractice -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
