@@ -32,8 +32,28 @@ public class ExcelUtils {
 
 	public static void main(String[] args) {
 		//getrowCount();
-		getcellData(1,1);
+		//getcellData(1,1);
+		getcolCount();
 		
+	}
+	
+	
+	public static void getcolCount()
+	{
+		try
+		{
+			path=System.getProperty("user.dir");
+			
+			int colcount=Sheet.getRow(0).getPhysicalNumberOfCells();
+			System.out.println("Number of rows is" +colcount);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
+			e.printStackTrace();
+
+		}
 	}
 		
 		
