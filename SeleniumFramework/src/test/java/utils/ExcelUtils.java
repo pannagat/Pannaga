@@ -38,14 +38,15 @@ public class ExcelUtils {
 	}
 	
 	
-	public static void getcolCount()
+	public static int getcolCount()
 	{
+		int colcount=0;
 		try
 		{
 			path=System.getProperty("user.dir");
 			
-			int colcount=Sheet.getRow(0).getPhysicalNumberOfCells();
-			System.out.println("Number of rows is" +colcount);
+		 colcount=Sheet.getRow(0).getPhysicalNumberOfCells();
+			//System.out.println("Number of rows is" +colcount);
 		}
 		catch(Exception e)
 		{
@@ -54,17 +55,40 @@ public class ExcelUtils {
 			e.printStackTrace();
 
 		}
+		return colcount;
 	}
+
+public static int getrowCount()
+{
+	int example=0;
+	try
+	{
+		
+		example=Sheet.getPhysicalNumberOfRows();
+		//System.out.println("Number of rows is" + example);
+	}
+	catch(Exception e)
+	{
+		System.out.println(e.getMessage());
+		System.out.println(e.getCause());
+		e.printStackTrace();
+
+	}
+
+return example;
+}
+
 		
 		
-		public static void getcellData(int rowNum,int colnum)
+		public static String getcellData(int rowNum,int colnum)
 		{
+			String celldata=null;
 			try
 			{
 				
 
-				String celldata=Sheet.getRow(rowNum).getCell(rowNum).getStringCellValue();
-				System.out.println(celldata);
+			celldata=Sheet.getRow(rowNum).getCell(rowNum).getStringCellValue();
+				//System.out.println(celldata);
 			}
 			catch(Exception e)
 			{
@@ -73,33 +97,41 @@ public class ExcelUtils {
 				e.printStackTrace();
 
 			}
+		
+		return celldata;
 		}
 }
+
+
+
+
+/*public static void getcellData(int rowNum,int colnum)
+{
+	try
+	{
+		
+
+		String celldata=Sheet.getRow(rowNum).getCell(rowNum).getStringCellValue();
+		System.out.println(celldata);
+	}
+	catch(Exception e)
+	{
+		System.out.println(e.getMessage());
+		System.out.println(e.getCause());
+		e.printStackTrace();
+
+	}
+}
+}
+*/
 
 	
 		//getcellDataNumber();
 	
 
-	/*public static void getrowCount()
-	{
-		try
-		{
-			path=System.getProperty("user.dir");
-			workbook=new XSSFWorkbook(path+"\\Excel\\AssignData.xlsx");
-			Sheet=workbook.getSheet("Sheet1");
-			int example=Sheet.getPhysicalNumberOfRows();
-			System.out.println("Number of rows is" + example);
-		}
-		catch(Exception e)
-		{
-			System.out.println(e.getMessage());
-			System.out.println(e.getCause());
-			e.printStackTrace();
+	
 
-		}
-	}
-
-	public static void getcellData()
+	/*public static void getcellData()
 	{
 		try
 		{
