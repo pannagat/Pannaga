@@ -1,179 +1,117 @@
 package utils;
 
-import java.io.IOException;
-
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
-	static String path;
+	static String projectpath;
 	static XSSFWorkbook workbook;
-	static XSSFSheet Sheet;
-
+	static XSSFSheet sheet;
 	
 	
+	public ExcelUtils(String excelpath,String sheetname)
+	{
+		try
+		{
+			
+			workbook=new XSSFWorkbook(excelpath);
+			sheet=workbook.getSheet(sheetname);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		
-
-	public ExcelUtils(String excelpath, String sheetname) {
+	}
+	
+	
+	public static void main(String[] args) {
+		getrowcount();
+		getcolcount();
+		getceldata(0,0);
+		getceldatanumber(1,1);
+	}
+	
+	
+	public static int getrowcount()
+	{
+		int rowcount=0;
 		try
 		{
 		
-		workbook=new XSSFWorkbook(excelpath);
-		Sheet=workbook.getSheet("Sheet1");	
-
+	rowcount=sheet.getPhysicalNumberOfRows();
+		//System.out.println("Number of rows : " +  rowcount);
+		
 	}
-	catch(Exception e)
+		catch(Exception e)
 		{
-		e.printStackTrace();
+			System.out.println(e.getCause());
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			
 		}
-	}
-		
-	
-
-	public static void main(String[] args) {
-		//getrowCount();
-		//getcellData(1,1);
-		getcolCount();
-		
+		return rowcount;
 	}
 	
 	
-	public static int getcolCount()
+	public static int  getcolcount()
 	{
 		int colcount=0;
 		try
 		{
-			path=System.getProperty("user.dir");
-			
-		 colcount=Sheet.getRow(0).getPhysicalNumberOfCells();
-			//System.out.println("Number of rows is" +colcount);
-		}
+		
+		colcount=sheet.getRow(0).getPhysicalNumberOfCells();
+		//System.out.println("Number of columns : " +  colcount);
+		
+	}
 		catch(Exception e)
 		{
-			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
+			System.out.println(e.getMessage());
 			e.printStackTrace();
-
+			
 		}
 		return colcount;
 	}
-
-public static int getrowCount()
-{
-	int example=0;
-	try
+	
+	
+	public static String getceldata(int rownum,int colnum)
 	{
-		
-		example=Sheet.getPhysicalNumberOfRows();
-		//System.out.println("Number of rows is" + example);
-	}
-	catch(Exception e)
-	{
-		System.out.println(e.getMessage());
-		System.out.println(e.getCause());
-		e.printStackTrace();
-
-	}
-
-return example;
-}
-
-		
-		
-		public static String getcellData(int rowNum,int colnum)
+		String celldata=null;
+		try
 		{
-			String celldata=null;
-			try
-			{
-				
-
-			celldata=Sheet.getRow(rowNum).getCell(rowNum).getStringCellValue();
-				//System.out.println(celldata);
-			}
-			catch(Exception e)
-			{
-				System.out.println(e.getMessage());
-				System.out.println(e.getCause());
-				e.printStackTrace();
-
-			}
 		
-		return celldata;
+		celldata=sheet.getRow(rownum).getCell(colnum).getStringCellValue();
+		//System.out.println("value is  : " +  celldata);
+		
+	}
+		catch(Exception e)
+		{
+			System.out.println(e.getCause());
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			
 		}
-}
-
-
-
-
-/*public static void getcellData(int rowNum,int colnum)
-{
-	try
-	{
-		
-
-		String celldata=Sheet.getRow(rowNum).getCell(rowNum).getStringCellValue();
-		System.out.println(celldata);
+		return celldata;
 	}
-	catch(Exception e)
-	{
-		System.out.println(e.getMessage());
-		System.out.println(e.getCause());
-		e.printStackTrace();
-
-	}
-}
-}
-*/
-
 	
-		//getcellDataNumber();
-	
-
-	
-
-	/*public static void getcellData()
+	public static void getceldatanumber(int rownum,int colnum)
 	{
 		try
 		{
-			path=System.getProperty("user.dir");
-			workbook=new XSSFWorkbook(path+"\\Excel\\AssignData.xlsx");
-			Sheet=workbook.getSheet("Sheet1");	
-
-
-			String celldata=Sheet.getRow(0).getCell(0).getStringCellValue();
-			System.out.println(celldata);
-		}
+				double celldatanum=sheet.getRow(rownum).getCell(colnum).getNumericCellValue();
+		//System.out.println("Number of columns : " +  celldatanum);
+		
+	}
 		catch(Exception e)
 		{
-			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
+			System.out.println(e.getMessage());
 			e.printStackTrace();
-
+			
 		}
 	}
-		
-		public static void getcellDataNumber()
-		{
-			try
-			{
-				path=System.getProperty("user.dir");
-				workbook=new XSSFWorkbook(path+"\\Excel\\AssignData.xlsx");
-				Sheet=workbook.getSheet("Sheet1");	
-
-
-			double celldata=Sheet.getRow(0).getCell(1).getNumericCellValue();
-				System.out.println(celldata);
-			}
-			catch(Exception e)
-			{
-				System.out.println(e.getMessage());
-				System.out.println(e.getCause());
-				e.printStackTrace();
-	}
+}
 
 
 
-
-
-		}
-}*/
