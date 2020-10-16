@@ -12,23 +12,24 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import PageObject.webpage4;
-import org.apache.commons.io.FileUtils;
 
 
 
 
 public class First {  
-  
+  static WebDriver driver=null;
 	public static void main(String[] args) throws InterruptedException {
 		{  
 			
 			
 			ChromeOptions coptions = new ChromeOptions();
 			coptions.addArguments("--disable-notifications");
+			driver.get("https://www.monsterindia.com/");
+			driver.manage().window().maximize();
 		
 
 
+		}
 
 
 
@@ -54,9 +55,7 @@ public class First {
 
 
 
-
-
-
+		
 
 
 
@@ -86,7 +85,7 @@ webpage4.setup(driver).click();
 webpage4.FirstName(driver).sendKeys("Pannaga");
 webpage4.LastName(driver).sendKeys("	T N");
 webpage4.UserName(driver).sendKeys("pannaga_22");*/
-		}
+		
 	}*/
 
 
