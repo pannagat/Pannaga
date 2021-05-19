@@ -1,9 +1,47 @@
 import java.util.*;
 public class ArrayListExam {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
-		//declaring the arraylist
+		
+	List<String> list1=new ArrayList<String>();
+	
+	list1.add("Sheela");
+	list1.add("Sarasa");
+	list1.add("Ranga");
+	list1.add("Shashi");
+	list1.add("ThangaMani");
+	System.out.println(list1);
+		
+		
+		
+		
+		
+	}
+}
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*declaring the arraylist
 		
 		List<String> list1=new ArrayList<String>();
 	
@@ -93,7 +131,7 @@ public class ArrayListExam {
 		//System.out.println(list1);
 		///.out.println(list1.isEmpty());
 		
-	}
+	
 
 
 		
