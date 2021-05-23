@@ -4,12 +4,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -17,16 +21,121 @@ public class Practice {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
+		implicitwait();
+		
+	}
+	
 		
 		
+		public static  void implicitwait()
+		{
 		
 	WebDriverManager.chromedriver().setup();
 		
 		WebDriver driver=new ChromeDriver();
+		
+		
+		driver.get("https://www.google.co.in");
+		//driver.manage().window().maximize();
+		
+		
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.findElement(By.name("q")).sendKeys("Automation");
+		driver.findElement(By.name("btnK")).sendKeys(Keys.RETURN);
+		
+		WebDriverWait wait=new WebDriverWait(driver, 30);
+		WebElement element=wait.until(ExpectedConditions.elementToBeClickable(By.name("abcde")));
+		
+		
+		
+		
+		
+		//driver.findElement(By.name("abcd")).click();
+		
+		driver.close();
+		
+		
+		
+		
+		}
+	}
+			
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		/*driver.get("http://automationpractice.com/");
+		driver.manage().window().maximize();
+		driver.findElement(By.linkText("Sign in")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.id("email_create")).sendKeys("pannaga_22@yahoo.co.in");
+		driver.findElement(By.id("SubmitCreate")).click();
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.id("id_gender2")).click();
+		//driver.findElement(By.id("customer_firstname")).sendKeys("Pannaga");
+		
+		//driver.findElement(By.id("customer_lastname")).sendKeys("Jamadagni");
+		
+		//driver.findElement(By.id("address2")).sendKeys("Apartment2");
+		
+		driver.findElement(By.id("city")).sendKeys("Belfast");
+		WebElement element2=driver.findElement(By.id("id_state"));
+		Select obj2=new Select(element2);
+		obj2.selectByValue("36");
+		/*WebElement element=driver.findElement(By.id("days"));
+		
+		
+		Select obj1=new Select(element);
+		obj1.selectByValue("17");
+		System.out.println("Day is selected");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		//****************************HCL assignment*****************************************
 		
 		
-		driver.get("https://return-order-app.herokuapp.com/");
+		/*driver.get("https://return-order-app.herokuapp.com/");
 		driver.manage().window().maximize();
 		driver.findElement(By.id("order-id")).sendKeys("1257945872");
 		driver.findElement(By.xpath("//button[contains(text(),'Find Order')]")).click();
@@ -213,6 +322,5 @@ public class Practice {
 		
 		
 		
-	}
-}
+
 
