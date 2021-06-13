@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="80218" started-at="2021-05-19T15:43:02 IST" finished-at="2021-05-19T15:44:22 IST">
+  <suite name="Default suite" duration-ms="14296" started-at="2021-06-13T15:03:52 IST" finished-at="2021-06-13T15:04:07 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="80218" started-at="2021-05-19T15:43:02 IST" finished-at="2021-05-19T15:44:22 IST">
-      <class name="Test1">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Test1@305fd85d]" name="setUp" is-config="true" duration-ms="26048" started-at="2021-05-19T15:43:02 IST" finished-at="2021-05-19T15:43:28 IST">
+    <test name="Default test" duration-ms="14296" started-at="2021-06-13T15:03:52 IST" finished-at="2021-06-13T15:04:07 IST">
+      <class name="Config.TestDemo">
+        <test-method status="PASS" signature="setuptest()[pri:0, instance:Config.TestDemo@7c1e2a9e]" name="setuptest" is-config="true" duration-ms="3577" started-at="2021-06-13T15:03:52 IST" finished-at="2021-06-13T15:03:56 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:Test1@305fd85d]" name="test1" duration-ms="32837" started-at="2021-05-19T15:43:28 IST" finished-at="2021-05-19T15:44:01 IST">
+        </test-method> <!-- setuptest -->
+        <test-method status="PASS" signature="demo()[pri:0, instance:Config.TestDemo@7c1e2a9e]" name="demo" duration-ms="9700" started-at="2021-06-13T15:03:56 IST" finished-at="2021-06-13T15:04:06 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:Test1@305fd85d]" name="tearDown" is-config="true" duration-ms="21253" started-at="2021-05-19T15:44:01 IST" finished-at="2021-05-19T15:44:22 IST">
+        </test-method> <!-- demo -->
+        <test-method status="PASS" signature="teardowntest()[pri:0, instance:Config.TestDemo@7c1e2a9e]" name="teardowntest" is-config="true" duration-ms="955" started-at="2021-06-13T15:04:06 IST" finished-at="2021-06-13T15:04:07 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Test1 -->
+        </test-method> <!-- teardowntest -->
+      </class> <!-- Config.TestDemo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

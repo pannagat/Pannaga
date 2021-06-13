@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Practice3.Revision">
+      <class name="Practice3.TestNgIgnoreTest">
         <methods>
-          <include name="testrun3"/>
+          <include name="setup"/>
+          <include name="Test2"/>
+          <include name="Test1"/>
         </methods>
-      </class> <!-- Practice3.Revision -->
+      </class> <!-- Practice3.TestNgIgnoreTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

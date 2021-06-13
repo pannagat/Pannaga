@@ -16,7 +16,59 @@ public class ExtentReportBasicDemo {
 	static WebDriver driver=null;
 public static void main(String[] args) throws InterruptedException {
 	
-	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extentReports.html");
+	
+	
+	ExtentHtmlReporter htmlreporter=new ExtentHtmlReporter("extentreports.html");
+	
+	ExtentReports extent=new ExtentReports ();
+	extent.attachReporter(htmlreporter);
+	
+	ExtentTest test1=extent.createTest("To create account for automation practice");
+	
+	
+	WebDriverManager.chromedriver().setup();
+	
+	 driver=new ChromeDriver();
+	 
+	 test1.log(Status.INFO, "Starting the test case");
+	 
+	 
+	 driver.get("http://automationpractice.com/");
+		driver.manage().window().maximize();
+		
+		test1.pass("Navigated to automation practice site");
+		driver.findElement(By.linkText("Sign in")).click();
+		Thread.sleep(5000);
+	
+		driver.findElement(By.id("email_create")).sendKeys("pannaga_22@yahoo.co.in");
+		
+		test1.pass("entered the email id succesfully");
+		driver.findElement(By.id("SubmitCreate")).click();
+		
+
+		test1.fail("could not click the create account button");
+		
+		
+		driver.close();
+		
+		
+		test1.info("Test completed");
+		
+		extent.flush();
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extentReports.html");
 	
 	 ExtentReports extent= new ExtentReports();
      extent.attachReporter(htmlReporter);
@@ -76,7 +128,7 @@ public static void main(String[] args) throws InterruptedException {
 		
 
 
-			extent.flush();
+			extent.flush();*/
 		}
 }
 

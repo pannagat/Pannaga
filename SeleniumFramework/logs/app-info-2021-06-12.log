@@ -1,0 +1,10 @@
+[INFO ] 2021-06-12 22:37:34.163 [main] Log4jsDemo - This is a information only
+[ERROR] 2021-06-12 22:37:34.168 [main] Log4jsDemo - This is a error message
+[WARN ] 2021-06-12 22:37:34.169 [main] Log4jsDemo - This is a warning message
+[INFO ] 2021-06-12 22:38:12.980 [main] Log4jsDemo - This is a information only
+[ERROR] 2021-06-12 22:38:12.980 [main] Log4jsDemo - This is a error message
+[WARN ] 2021-06-12 22:38:12.980 [main] Log4jsDemo - This is a warning message
+[TRACE] 2021-06-12 22:39:59.910 [main] Log4jsDemo - This is a trace level message
+[INFO ] 2021-06-12 22:39:59.948 [main] Log4jsDemo - This is a information only
+[ERROR] 2021-06-12 22:39:59.948 [main] Log4jsDemo - This is a error message
+[WARN ] 2021-06-12 22:39:59.949 [main] Log4jsDemo - This is a warning message
